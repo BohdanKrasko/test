@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "eu-west-3"
+  region = "eu-west-2"
 }
 
 resource "aws_key_pair" "main" {
@@ -46,6 +46,7 @@ module "vpc" {
   public_subnet_tags = {
     "kubernetes.io/cluster/${local.cluster_name}" = "shared"
     "kubernetes.io/role/elb"                      = "1"
+    "eks_subnet"                                  = "1"
   }
 
   private_subnet_tags = {
@@ -95,6 +96,6 @@ module "eks" {
   write_kubeconfig   = true
   config_output_path = "./"
 }
-module "datadog" {
-  source = "./modules/datadog"
-}
+#module "datadog" {
+  #source = "./modules/datadog"
+#}

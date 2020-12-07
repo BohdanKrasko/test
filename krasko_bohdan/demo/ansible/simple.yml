@@ -1,7 +1,7 @@
 ---
 - name: Ansible Test Playbook
   gather_facts: false
-  hosts: aws_region_eu_west_3
+  hosts: aws_region_eu_west_2
   tasks:
     - name: install python-pip
       yum:

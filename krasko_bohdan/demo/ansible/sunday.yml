@@ -1,8 +1,8 @@
-- hosts: aws_region_eu_west_3
+- hosts: aws_region_eu_west_2
   gather_facts: no
   become: true
   vars:
-    region: eu-west-3
+    region: eu-west-2
   
   collections:
     - community.aws
